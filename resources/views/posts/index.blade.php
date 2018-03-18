@@ -3,23 +3,26 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <table class="table table-bordered table-responsive">
+        <table class="table table-bordered table-responsive"><br>
             <thead>
-            <a href="#" class="btn btn-primary">Add New Post</a>
+            <a href="{!! route('post.create')!!}" class="btn btn-primary">Add New Post</a>
             <br></br>
+
             <tr>
                 <th>ID</th>
+                <th>Name</th>
                 <th>Title</th>
-                <th>Body</th>
+                <th>Content</th>
             </tr>
             </thead>
             <tbody>
-            {{--@foreach($posts as $post)--}}
-                {{--<tr>--}}
-                    {{--<td>{{$post->id}}</td>--}}
-                    {{--<td>{{$post->title}}</td>--}}
-                    {{--<td>{{$post->content}}</td>--}}
-                    {{--<td>{{$post->body}}</td>--}}
+            @foreach($posts as $post)
+                <tr>
+                    <td>{{$post->id}}</td>
+                    <td>{{$post->name}}</td>
+                    <td>{{$post->title}}</td>
+                    <td>{{$post->content}}</td>
+
 
 
 
@@ -33,8 +36,8 @@
 
                         {{--</form>--}}
                     {{--</td>--}}
-                {{--</tr>--}}
-            {{--@endforeach--}}
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>

@@ -14,8 +14,12 @@ class PostController extends Controller
      */
     public function index()
     {
-//        $posts=Post::orderBy('id','asc')->paginate(10);
-        return view( "posts.index");
+        $posts=Post::all();
+        dd($posts);
+
+        return view( "posts.index",[
+            'posts'=>$posts
+        ]);
     }
 
     /**

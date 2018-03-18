@@ -12,8 +12,8 @@
 */
 Route::get('/about', 'PageController@index');
 Route::get('/contact','PageController@create');
-Route::get('/create','PostController@create');
-Route::post('/post','PostController@index')->name('post.index');
+Route::get('/post/create','PostController@create')->name('post.create');
+Route::get('/post','PostController@index')->name('post.index');
 
 Route::get('/', function () {
     return view('pages.welcome');
