@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Post;
 
 class PostController extends Controller
@@ -14,8 +15,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts=Post::all();
-        dd($posts);
+        $posts=Post::orderBy('id','asc')->paginate(10);
+//        dd($posts);
 
         return view( "posts.index",[
             'posts'=>$posts
