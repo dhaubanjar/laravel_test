@@ -13,8 +13,9 @@
 Route::get('/about', 'PageController@index');
 Route::get('/contact','PageController@create');
 Route::get('/post/create','PostController@create')->name('post.create');
+
+Route::post('/post','PostController@store')->name('post.store');
 Route::get('/post','PostController@index')->name('post.index');
 
-Route::get('/', function () {
-    return view('pages.welcome');
-});
+
+Route::get('/', 'PostController@welcomeShow')->name('welcome.show');

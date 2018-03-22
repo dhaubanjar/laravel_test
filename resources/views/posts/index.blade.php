@@ -1,12 +1,12 @@
 @extends('main')
-@section('title')
+@yield('title')
 @section('content')
 <div class="row">
     <div class="col-md-12">
         <table class="table table-bordered table-responsive"><br>
             <thead>
             <a href="{!! route('post.create')!!}" class="btn btn-primary">Add New Post</a>
-            <br></br>
+            <br/>
 
             <tr>
                 <th>ID</th>
@@ -43,10 +43,11 @@
     </div>
 
 </div>
+{!! $posts->links("pagination::bootstrap-4") !!}
 
-<div class="col-md-12">
-    <div class="text-center">
-        {!! $posts->links() !!}
-    </div>
-</div>
-    @endsection
+
+
+
+
+
+@endsection

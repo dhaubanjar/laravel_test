@@ -23,6 +23,12 @@ class PostController extends Controller
         ]);
     }
 
+    public function welcomeShow(){
+        $posts = Post::all();
+        return view('pages.welcome',[
+            'posts'=>$posts
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -41,7 +47,21 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request, array(
+            'name'=>'required|max:255',
+            'title'=>'required|max:255',
+            'content'=>'required'
+    ));
+        $post= new Post();
+        $post->name = $request->name;
+        $post->title = $request->title;
+        $post->content = $request->content;
+
+        $post->save();
+
+        return redirect()->route('post.index');
+
     }
 
     /**

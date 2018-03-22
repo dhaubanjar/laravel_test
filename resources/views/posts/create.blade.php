@@ -1,17 +1,28 @@
 @extends('main')
-@section('title')
+@yield('title')
+
     @section('content')
         <div class="row">
+            @if($errors->any())
+                {!! $errors !!}
+                @endif
             <div class="col-md-8 col-md-offset-2">
                 <h1>Create New Post</h1>
                 <hr>
-                <form class="form-horizontal" method="get" action="{{route('post.index')}}">
+                <form class="form-horizontal" method="POST" action="{!!  route('post.store')!!}">
+                    {{csrf_field()}}
                     <div class="form-group">
-                        <label name="title">Title</label>
-                        <input id="title" type="text" class="form-control">
+                        <label>ID</label>
+                        <input name="id" type="text" class="form-control">
+                        <br>
+                        <label>Name</label>
+                        <input name="name" type="text" class="form-control">
+                        <br>
+                        <label>Title</label>
+                        <input name="title" type="text" class="form-control">
                             <br>
-                        <label name="post">Post Body</label>
-                        <textarea id="body" type="text" class="form-control"></textarea>
+                        <label>Post Body</label>
+                        <textarea name="content" class="form-control"></textarea>
                         <br>
                         <input type="submit" class="btn btn-success btn-lg btn-block" value="Submit Post" >
                     </div>

@@ -21,29 +21,13 @@
         <div class="row">
 
             <div class="col-md-8" style="background-color: #e9ecef;">
+                @foreach($posts as $post)
                <div class="post">
-                   <h3>Post Title</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, cumque dolore dolores ea earum facilis ipsa libero natus nihil non nulla officiis, porro repellendus, sit soluta suscipit vero voluptates! Culpa.</p>
+                   <h3>{!! $post->title !!}</h3>
+                   <p>{!! $post->content !!}</p>
                    <a href="#" class="btn btn-primary">Read More</a><hr>
                </div>
-
-                <div class="post">
-                   <h3>Post Title</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, cumque dolore dolores ea earum facilis ipsa libero natus nihil non nulla officiis, porro repellendus, sit soluta suscipit vero voluptates! Culpa.</p>
-                   <a href="#" class="btn btn-primary">Read More</a><hr>
-               </div>
-
-                <div class="post">
-                   <h3>Post Title</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, cumque dolore dolores ea earum facilis ipsa libero natus nihil non nulla officiis, porro repellendus, sit soluta suscipit vero voluptates! Culpa.</p>
-                   <a href="#" class="btn btn-primary">Read More</a><hr>
-               </div>
-
-                <div class="post">
-                   <h3>Post Title</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, cumque dolore dolores ea earum facilis ipsa libero natus nihil non nulla officiis, porro repellendus, sit soluta suscipit vero voluptates! Culpa.</p>
-                   <a href="#" class="btn btn-primary">Read More</a>
-               </div>
+                    @endforeach
             </div>
             <div class="offset-1 col-md-3" style="background-color: #e9ecef;">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi beatae cumque neque. Doloremque eligendi eveniet expedita facere iure maiores nisi odit perferendis provident quasi sequi suscipit ut, veniam voluptatibus.
